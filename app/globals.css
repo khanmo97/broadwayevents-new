@@ -10,18 +10,62 @@
   --highlight: #a69b73;
 }
 
+/* Theme-specific CSS variables */
+.theme-olive-gold {
+  --color-primary: #000000;
+  --color-primaryDark: #0A0A0A;
+  --color-accent: #1A1A1A;
+  --color-background: #000000;
+  --color-text: #FFFFFF;
+  --color-gold: #FFD700;
+  --color-goldLight: #FFED4A;
+  --color-goldDark: #B8860B;
+  --color-surface: #111111;
+  --color-border: #FFD700;
+  --color-highlight: #FFD700;
+  --color-black: #000000;
+  --color-darkGray: #1A1A1A;
+  --color-lightGray: #333333;
+  --color-white: #FFFFFF;
+  --color-metallicGold: #FFD700;
+  --color-darkGold: #B8860B;
+  --color-neonGold: #FFED4A;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    background: #ffffff;
-    color: #4a453a;
+    background: var(--color-background, #ffffff);
+    color: var(--color-text, #4a453a);
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 
 @layer components {
+  /* Premium Black & Gold Theme Styles */
+  .shadow-gold {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3), 0 0 40px rgba(255, 215, 0, 0.1);
+  }
+
+  .hover\:shadow-gold:hover {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3), 0 0 40px rgba(255, 215, 0, 0.1);
+  }
+
+  .neon-glow {
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3), 0 0 30px rgba(255, 215, 0, 0.1);
+  }
+
+  .premium-gradient {
+    background: linear-gradient(135deg, #000000 0%, #1A1A1A 50%, #000000 100%);
+  }
+
+  .gold-gradient {
+    background: linear-gradient(135deg, #FFD700 0%, #B8860B 50%, #FFD700 100%);
+  }
+
   .animate-fade-in-up {
     animation: fadeInUp 0.8s ease-out forwards;
   }

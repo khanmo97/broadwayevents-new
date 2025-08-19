@@ -60,15 +60,15 @@ export default function Services() {
   }, [])
 
   return (
-    <section id="services" ref={sectionRef} className="section-padding warm-gradient-bg">
+    <section id="services" ref={sectionRef} className="section-padding bg-black">
       <div className="container-width">
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
-            <div className="h-1 w-16 bg-gradient-to-r from-gold-400 to-gold-600 mx-auto rounded-full"></div>
-            <h2 className="font-playfair text-4xl font-bold text-primary mt-6 mb-4">Our Services</h2>
-            <div className="h-1 w-16 bg-gradient-to-r from-gold-600 to-gold-400 mx-auto rounded-full"></div>
+            <div className="h-1 w-16 bg-gradient-to-r from-metallicGold to-neonGold mx-auto rounded-full"></div>
+            <h2 className="font-playfair text-4xl font-bold text-white mt-6 mb-4 uppercase tracking-wider">Our Services</h2>
+            <div className="h-1 w-16 bg-gradient-to-r from-neonGold to-metallicGold mx-auto rounded-full"></div>
           </div>
-          <p className="text-lg text-primary-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
             We provide elegant venues for every special occasion
           </p>
         </div>
@@ -82,18 +82,18 @@ export default function Services() {
               <div
                 key={service.title}
                 data-index={index}
-                className={`service-card gold-card clean-card rounded-xl p-8 text-center transition-all duration-500 group hover:shadow-2xl ${
+                className={`service-card bg-darkGray border border-metallicGold rounded-xl p-8 text-center transition-all duration-500 group hover:shadow-gold hover:scale-105 ${
                   isVisible ? "animate-fade-in-up" : "opacity-0 translate-y-4"
                 }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-gold-200 to-gold-400 rounded-full flex items-center justify-center mx-auto mb-6 border-2 border-gold-300 group-hover:scale-110 transition-transform duration-300">
-                  <Icon className="h-8 w-8 text-gold-800" />
+                <div className="w-16 h-16 bg-gradient-to-br from-metallicGold to-neonGold rounded-full flex items-center justify-center mx-auto mb-6 border-2 border-metallicGold group-hover:scale-110 transition-transform duration-300">
+                  <Icon className="h-8 w-8 text-black" />
                 </div>
-                <h3 className="font-playfair text-xl font-semibold text-primary mb-3 group-hover:text-gold-700 transition-colors">
+                <h3 className="font-playfair text-xl font-semibold text-white mb-3 group-hover:text-metallicGold transition-colors uppercase tracking-wider">
                   {service.title}
                 </h3>
-                <p className="text-primary-600 leading-relaxed">{service.description}</p>
+                <p className="text-gray-300 leading-relaxed">{service.description}</p>
               </div>
             )
           })}

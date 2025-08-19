@@ -20,66 +20,64 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/95 backdrop-blur-sm shadow-lg border-b-2 border-gold-200" : "bg-transparent"
+        scrolled ? "bg-black/95 backdrop-blur-sm shadow-gold border-b-2 border-metallicGold" : "bg-transparent"
       }`}
     >
       <div className="container-width">
         <div className="flex justify-between items-center h-20 md:h-32">
           <Link href="/" className="flex items-center">
-            <div className="rounded-full bg-white ring-1 ring-gold-300 shadow-md p-1 md:p-2">
-              <Image
-                src="/images/broadway_enhanced_shadow-sBjg3tijybFkuFFoY11xBCUA5jngwi.svg"
-                alt="Broadway Studios & Events"
-                width={112}
-                height={112}
-                priority
-                className="object-contain contrast-150 saturate-125 w-12 h-12 sm:w-14 sm:h-14 md:w-28 md:h-28"
-              />
-            </div>
+            <Image
+              src="/images/broadway-new-logo.png"
+              alt="Broadway Studios & Events"
+              width={112}
+              height={112}
+              priority
+              className="object-contain w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32"
+            />
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link
               href="/"
-              className="text-primary hover:text-gold transition-colors text-sm font-medium relative group"
+              className="text-white hover:text-metallicGold transition-colors text-sm font-medium relative group uppercase tracking-wider"
             >
               Home
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-gold-400 to-gold-600 transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-metallicGold to-metallicGold transition-all duration-300 group-hover:w-full"></span>
             </Link>
             <Link
               href="#services"
-              className="text-primary hover:text-gold transition-colors text-sm font-medium relative group"
+              className="text-white hover:text-metallicGold transition-colors text-sm font-medium relative group uppercase tracking-wider"
             >
               Services
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-gold-400 to-gold-600 transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-metallicGold to-metallicGold transition-all duration-300 group-hover:w-full"></span>
             </Link>
             <Link
               href="#packages"
-              className="text-primary hover:text-gold transition-colors text-sm font-medium relative group"
+              className="text-white hover:text-metallicGold transition-colors text-sm font-medium relative group uppercase tracking-wider"
             >
               Packages
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-gold-400 to-gold-600 transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-metallicGold to-metallicGold transition-all duration-300 group-hover:w-full"></span>
             </Link>
             <Link
               href="#about"
-              className="text-primary hover:text-gold transition-colors text-sm font-medium relative group"
+              className="text-white hover:text-metallicGold transition-colors text-sm font-medium relative group uppercase tracking-wider"
             >
               About
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-gold-400 to-gold-600 transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-metallicGold to-metallicGold transition-all duration-300 group-hover:w-full"></span>
             </Link>
             <Link
               href="#contact"
-              className="text-primary hover:text-gold transition-colors text-sm font-medium relative group"
+              className="text-white hover:text-metallicGold transition-colors text-sm font-medium relative group uppercase tracking-wider"
             >
               Contact
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-gold-400 to-gold-600 transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-metallicGold to-metallicGold transition-all duration-300 group-hover:w-full"></span>
             </Link>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-primary hover:text-gold transition-colors">
+            <button onClick={() => setIsOpen(!isOpen)} className="text-white hover:text-metallicGold transition-colors">
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
@@ -87,35 +85,38 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden bg-white/95 backdrop-blur-sm border-t-2 border-gold-200 py-4 shadow-lg">
+          <div className="md:hidden bg-black/95 backdrop-blur-sm border-t-2 border-metallicGold py-4 shadow-gold">
+            <div className="px-4 pb-3 border-b border-metallicGold/50 mb-3">
+              {/* Removed ThemeSwitcher from here */}
+            </div>
             <div className="flex flex-col space-y-4">
               <Link
                 href="/"
-                className="text-primary hover:text-gold transition-colors text-sm font-medium px-4 py-2 rounded-lg hover:bg-gold-50"
+                className="text-white hover:text-metallicGold transition-colors text-sm font-medium px-4 py-2 rounded-lg hover:bg-darkGray uppercase tracking-wider"
               >
                 Home
               </Link>
               <Link
                 href="#services"
-                className="text-primary hover:text-gold transition-colors text-sm font-medium px-4 py-2 rounded-lg hover:bg-gold-50"
+                className="text-white hover:text-metallicGold transition-colors text-sm font-medium px-4 py-2 rounded-lg hover:bg-darkGray uppercase tracking-wider"
               >
                 Services
               </Link>
               <Link
                 href="#packages"
-                className="text-primary hover:text-gold transition-colors text-sm font-medium px-4 py-2 rounded-lg hover:bg-gold-50"
+                className="text-white hover:text-metallicGold transition-colors text-sm font-medium px-4 py-2 rounded-lg hover:bg-darkGray uppercase tracking-wider"
               >
                 Packages
               </Link>
               <Link
                 href="#about"
-                className="text-primary hover:text-gold transition-colors text-sm font-medium px-4 py-2 rounded-lg hover:bg-gold-50"
+                className="text-white hover:text-metallicGold transition-colors text-sm font-medium px-4 py-2 rounded-lg hover:bg-darkGray uppercase tracking-wider"
               >
                 About
               </Link>
               <Link
                 href="#contact"
-                className="text-primary hover:text-gold transition-colors text-sm font-medium px-4 py-2 rounded-lg hover:bg-gold-50"
+                className="text-white hover:text-metallicGold transition-colors text-sm font-medium px-4 py-2 rounded-lg hover:bg-darkGray uppercase tracking-wider"
               >
                 Contact
               </Link>
