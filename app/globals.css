@@ -3,33 +3,62 @@
 @tailwind utilities;
 
 :root {
-  --primary: #4a453a;
-  --accent: #f8f7f4;
-  --gold: #b2a875;
-  --secondary: #cbc3ad;
-  --highlight: #a69b73;
+  --color-primary: #4B4B4B;
+  --color-primary-dark: #3A3A3A;
+  --color-accent: #B8860B;
+  --color-background: #FAF9F6;
+  --color-text: #6B6B6B;
+  --color-surface: #F5EDE4;
+  --color-border: #B8860B;
+  --color-highlight: #B8860B;
+  --color-ivory: #FAF9F6;
+  --color-champagne: #F5EDE4;
+  --color-olive: #556B2F;
+  --color-light-olive: #6B8E23;
+  --color-dark-olive: #2F4F2F;
+  --color-gold: #B8860B;
+  --color-gold-light: #DAA520;
+  --color-gold-dark: #8B6914;
+  --color-warm-gray: #6B6B6B;
+  --color-dark-warm-gray: #4B4B4B;
 }
 
-/* Theme-specific CSS variables */
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+/* Custom utility classes for olive and gold theme */
+.shadow-gold {
+  box-shadow: 0 4px 14px 0 rgba(184, 134, 11, 0.25);
+}
+
+.gold-gradient {
+  background: linear-gradient(90deg, #B8860B, #DAA520);
+}
+
+.gold-glow {
+  box-shadow: 0 0 20px rgba(184, 134, 11, 0.3);
+}
+
+.luxury-gradient {
+  background: linear-gradient(135deg, #FAF9F6 0%, #F5EDE4 100%);
+}
+
+.olive-gradient {
+  background: linear-gradient(135deg, #556B2F 0%, #6B8E23 100%);
+}
+
+/* Theme-specific styles */
 .theme-olive-gold {
-  --color-primary: #000000;
-  --color-primaryDark: #0A0A0A;
-  --color-accent: #1A1A1A;
-  --color-background: #000000;
-  --color-text: #FFFFFF;
-  --color-gold: #FFD700;
-  --color-goldLight: #FFED4A;
-  --color-goldDark: #B8860B;
-  --color-surface: #111111;
-  --color-border: #FFD700;
-  --color-highlight: #FFD700;
-  --color-black: #000000;
-  --color-darkGray: #1A1A1A;
-  --color-lightGray: #333333;
-  --color-white: #FFFFFF;
-  --color-metallicGold: #FFD700;
-  --color-darkGold: #B8860B;
-  --color-neonGold: #FFED4A;
+  --color-primary: #4B4B4B;
+  --color-primary-dark: #3A3A3A;
+  --color-accent: #B8860B;
+  --color-background: #FAF9F6;
+  --color-text: #6B6B6B;
+  --color-surface: #F5EDE4;
+  --color-border: #B8860B;
+  --color-highlight: #B8860B;
 }
 
 @layer base {

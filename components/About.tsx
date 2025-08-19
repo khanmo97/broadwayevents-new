@@ -36,51 +36,93 @@ export default function About() {
   ]
 
   return (
-    <section id="about" ref={sectionRef} className="section-padding bg-black">
+    <section id="about" className="py-20 bg-champagne">
       <div className="container-width">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-darkWarmGray mb-6">
+            About Broadway Studios & Events
+          </h2>
+          <div className="w-24 h-1 bg-gold-gradient mx-auto rounded-full"></div>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div
-            className={`transition-all duration-700 ${isVisible ? "animate-fade-in-left" : "opacity-0 -translate-x-4"}`}
-          >
-            <div className="inline-block mb-4">
-              <div className="h-1 w-16 bg-gradient-to-r from-metallicGold to-neonGold rounded-full"></div>
-              <h2 className="font-playfair text-4xl font-bold text-white mt-6 tracking-wider">
-                Why Choose <span className="text-metallicGold uppercase">Broadway Events</span>
-              </h2>
-            </div>
-            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-              Located in Garland, Texas, we've been creating memorable events for over a decade. Our venue combines
-              modern amenities with elegant simplicity.
+          <div>
+            <p className="text-lg text-warmGray mb-6 leading-relaxed">
+              Welcome to Broadway Studios & Events, where elegance meets excellence in the heart of Garland, Texas. 
+              Our venue is designed to create the perfect backdrop for your most cherished moments.
+            </p>
+            <p className="text-lg text-warmGray mb-8 leading-relaxed">
+              From intimate gatherings to grand celebrations, we provide a sophisticated space that adapts to your vision. 
+              Our dedicated team ensures every detail is perfect, making your event truly unforgettable.
             </p>
 
-            <div className="grid grid-cols-2 gap-6">
-              <div className="text-center p-6 border border-metallicGold rounded-xl bg-darkGray hover:shadow-gold hover:scale-105 transition-all duration-300">
-                <div className="text-2xl font-bold text-white mb-2 uppercase tracking-wider">Award Winning</div>
-                <div className="text-sm text-gray-400">
-                  Best Venue <span className="text-metallicGold font-bold">2023</span>
+            {/* Features */}
+            <div className="space-y-4">
+              <div className="flex items-center space-x-3">
+                <div className="w-6 h-6 bg-gold rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
                 </div>
+                <span className="text-warmGray">Elegant and versatile event space</span>
               </div>
-              <div className="text-center p-6 border border-metallicGold rounded-xl bg-darkGray hover:shadow-gold hover:scale-105 transition-all duration-300">
-                <div className="text-2xl font-bold text-white mb-2 uppercase tracking-wider">Expert Team</div>
-                <div className="text-sm text-gray-400">
-                  Professional <span className="text-metallicGold font-bold">Staff</span>
+              <div className="flex items-center space-x-3">
+                <div className="w-6 h-6 bg-gold rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
                 </div>
+                <span className="text-warmGray">Professional event coordination</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <div className="w-6 h-6 bg-gold rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <span className="text-warmGray">State-of-the-art amenities</span>
               </div>
             </div>
           </div>
 
-          <div
-            className={`transition-all duration-700 ${isVisible ? "animate-fade-in-right" : "opacity-0 translate-x-4"}`}
-          >
-            <div className="gold-card clean-card rounded-xl p-8 bg-darkGray border border-metallicGold shadow-gold">
-              <h3 className="font-playfair text-2xl font-semibold text-white mb-6 uppercase tracking-wider">What's Included</h3>
+          <div className="relative">
+            <div className="absolute -inset-4 bg-gradient-to-r from-gold/20 to-goldLight/20 rounded-2xl blur-xl"></div>
+            <div className="relative bg-ivory rounded-2xl p-8 border border-gold/30 shadow-gold">
+              <h3 className="text-2xl font-bold text-darkWarmGray mb-4">Why Choose Us?</h3>
               <div className="space-y-4">
-                {features.map((feature, index) => (
-                  <div key={index} className="flex items-center space-x-3 group">
-                    <CheckCircle className="h-5 w-5 text-metallicGold flex-shrink-0 group-hover:scale-110 transition-transform duration-200" />
-                    <span className="text-gray-300 group-hover:text-white transition-colors">{feature}</span>
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-gold rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
                   </div>
-                ))}
+                  <div>
+                    <h4 className="font-semibold text-darkWarmGray mb-1">Prime Location</h4>
+                    <p className="text-warmGray text-sm">Conveniently located in Garland with easy access and parking</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-gold rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-darkWarmGray mb-1">Flexible Space</h4>
+                    <p className="text-warmGray text-sm">Adaptable layout for events of all sizes and styles</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-gold rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-darkWarmGray mb-1">Expert Support</h4>
+                    <p className="text-warmGray text-sm">Dedicated team to ensure your event runs smoothly</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -19,11 +19,11 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-black/95 backdrop-blur-sm shadow-gold border-b-2 border-metallicGold" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? "bg-ivory/95 backdrop-blur-md border-b border-gold shadow-gold" : "bg-ivory/95 backdrop-blur-md"
       }`}
     >
-      <div className="container-width">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20 md:h-32">
           <Link href="/" className="flex items-center">
             <Image
@@ -38,88 +38,92 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link
-              href="/"
-              className="text-white hover:text-metallicGold transition-colors text-sm font-medium relative group uppercase tracking-wider"
-            >
-              Home
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-metallicGold to-metallicGold transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link
-              href="#services"
-              className="text-white hover:text-metallicGold transition-colors text-sm font-medium relative group uppercase tracking-wider"
-            >
-              Services
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-metallicGold to-metallicGold transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link
-              href="#packages"
-              className="text-white hover:text-metallicGold transition-colors text-sm font-medium relative group uppercase tracking-wider"
-            >
-              Packages
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-metallicGold to-metallicGold transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link
-              href="#about"
-              className="text-white hover:text-metallicGold transition-colors text-sm font-medium relative group uppercase tracking-wider"
-            >
+            <Link href="#about" className="text-warmGray hover:text-gold transition-colors duration-200 font-medium">
               About
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-metallicGold to-metallicGold transition-all duration-300 group-hover:w-full"></span>
             </Link>
-            <Link
-              href="#contact"
-              className="text-white hover:text-metallicGold transition-colors text-sm font-medium relative group uppercase tracking-wider"
-            >
+            <Link href="#services" className="text-warmGray hover:text-gold transition-colors duration-200 font-medium">
+              Services
+            </Link>
+            <Link href="#packages" className="text-warmGray hover:text-gold transition-colors duration-200 font-medium">
+              Packages
+            </Link>
+            <Link href="#gallery" className="text-warmGray hover:text-gold transition-colors duration-200 font-medium">
+              Gallery
+            </Link>
+            <Link href="#contact" className="text-warmGray hover:text-gold transition-colors duration-200 font-medium">
               Contact
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-metallicGold to-metallicGold transition-all duration-300 group-hover:w-full"></span>
+            </Link>
+          </div>
+
+          {/* CTA Button */}
+          <div className="hidden md:block">
+            <Link 
+              href="#contact" 
+              className="bg-gold hover:bg-goldDark text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 shadow-gold hover:shadow-gold-glow"
+            >
+              Get Started
             </Link>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-white hover:text-metallicGold transition-colors">
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          </div>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden p-2 rounded-lg text-warmGray hover:text-gold hover:bg-champagne transition-colors duration-200"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden bg-black/95 backdrop-blur-sm border-t-2 border-metallicGold py-4 shadow-gold">
-            <div className="px-4 pb-3 border-b border-metallicGold/50 mb-3">
-              {/* Removed ThemeSwitcher from here */}
-            </div>
-            <div className="flex flex-col space-y-4">
-              <Link
-                href="/"
-                className="text-white hover:text-metallicGold transition-colors text-sm font-medium px-4 py-2 rounded-lg hover:bg-darkGray uppercase tracking-wider"
-              >
-                Home
-              </Link>
-              <Link
-                href="#services"
-                className="text-white hover:text-metallicGold transition-colors text-sm font-medium px-4 py-2 rounded-lg hover:bg-darkGray uppercase tracking-wider"
-              >
-                Services
-              </Link>
-              <Link
-                href="#packages"
-                className="text-white hover:text-metallicGold transition-colors text-sm font-medium px-4 py-2 rounded-lg hover:bg-darkGray uppercase tracking-wider"
-              >
-                Packages
-              </Link>
-              <Link
-                href="#about"
-                className="text-white hover:text-metallicGold transition-colors text-sm font-medium px-4 py-2 rounded-lg hover:bg-darkGray uppercase tracking-wider"
+          <div className="md:hidden bg-ivory/98 backdrop-blur-md border-t border-gold shadow-gold">
+            <div className="px-2 pt-2 pb-3 space-y-1">
+              <Link 
+                href="#about" 
+                className="block px-3 py-2 text-warmGray hover:text-gold hover:bg-champagne rounded-md transition-colors duration-200"
+                onClick={() => setIsOpen(false)}
               >
                 About
               </Link>
-              <Link
-                href="#contact"
-                className="text-white hover:text-metallicGold transition-colors text-sm font-medium px-4 py-2 rounded-lg hover:bg-darkGray uppercase tracking-wider"
+              <Link 
+                href="#services" 
+                className="block px-3 py-2 text-warmGray hover:text-gold hover:bg-champagne rounded-md transition-colors duration-200"
+                onClick={() => setIsOpen(false)}
+              >
+                Services
+              </Link>
+              <Link 
+                href="#packages" 
+                className="block px-3 py-2 text-warmGray hover:text-gold hover:bg-champagne rounded-md transition-colors duration-200"
+                onClick={() => setIsOpen(false)}
+              >
+                Packages
+              </Link>
+              <Link 
+                href="#gallery" 
+                className="block px-3 py-2 text-warmGray hover:text-gold hover:bg-champagne rounded-md transition-colors duration-200"
+                onClick={() => setIsOpen(false)}
+              >
+                Gallery
+              </Link>
+              <Link 
+                href="#contact" 
+                className="block px-3 py-2 text-warmGray hover:text-gold hover:bg-champagne rounded-md transition-colors duration-200"
+                onClick={() => setIsOpen(false)}
               >
                 Contact
               </Link>
+              <div className="pt-4">
+                <Link 
+                  href="#contact" 
+                  className="block w-full text-center bg-gold hover:bg-goldDark text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 shadow-gold"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Get Started
+                </Link>
+              </div>
             </div>
           </div>
         )}

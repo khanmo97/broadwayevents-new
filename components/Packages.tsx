@@ -65,143 +65,137 @@ const plusFeatures = [
 ]
 
 const addOns = [
-  "Throne chairs",
-  "Peacock chairs",
-  "Baby reveals",
-  "Letters",
-  "Oh baby",
-  "Mis quince",
-  "Love",
-  "15 años",
-  "Photography",
+  {
+    name: "Throne chairs",
+    description: "Luxurious seating for a regal feel.",
+    price: 500,
+    icon: Check,
+  },
+  {
+    name: "Peacock chairs",
+    description: "Elegant and eye-catching seating option.",
+    price: 300,
+    icon: Check,
+  },
+  {
+    name: "Baby reveals",
+    description: "Specialized setup for baby showers.",
+    price: 200,
+    icon: Check,
+  },
+  {
+    name: "Letters",
+    description: "Customized signage for your event.",
+    price: 150,
+    icon: Check,
+  },
+  {
+    name: "Oh baby",
+    description: "Decorative elements for a baby-themed event.",
+    price: 100,
+    icon: Check,
+  },
+  {
+    name: "Mis quince",
+    description: "Traditional Mexican quinceañera decorations.",
+    price: 250,
+    icon: Check,
+  },
+  {
+    name: "Love",
+    description: "Romantic and intimate decor for weddings.",
+    price: 180,
+    icon: Check,
+  },
+  {
+    name: "15 años",
+    description: "Decorative elements for a 15th birthday party.",
+    price: 120,
+    icon: Check,
+  },
+  {
+    name: "Photography",
+    description: "Professional photography services.",
+    price: 800,
+    icon: Check,
+  },
 ]
 
 export default function Packages() {
   return (
-    <section id="packages" className="section-padding bg-black">
+    <section id="packages" className="py-20 bg-champagne">
       <div className="container-width">
-        <div className="text-center mb-8">
-          <div className="inline-block mb-4">
-            <div className="h-1 w-16 bg-gradient-to-r from-metallicGold to-neonGold mx-auto rounded-full"></div>
-            <h2 className="font-playfair text-4xl font-bold text-white mt-6 mb-4 uppercase tracking-wider">Price List</h2>
-            <div className="h-1 w-16 bg-gradient-to-r from-neonGold to-metallicGold mx-auto rounded-full"></div>
-          </div>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-6">
-            Simple, transparent pricing for your perfect event
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-darkWarmGray mb-6">
+            Pricing Packages
+          </h2>
+          <div className="w-24 h-1 bg-gold-gradient mx-auto rounded-full"></div>
+          <p className="text-lg text-warmGray mt-6 max-w-2xl mx-auto">
+            Choose the perfect package for your event. All packages include our signature service 
+            and attention to detail.
           </p>
-
-          {/* Friendly Disclaimer moved here */}
-          <div className="bg-darkGray border border-metallicGold p-4 rounded-xl max-w-2xl mx-auto">
-            <h4 className="font-playfair text-base font-semibold text-white mb-2">📝 Friendly Note</h4>
-            <p className="text-gray-300 text-sm">
-              Last minute guest count increases will be accommodated at a surcharge to ensure we can provide the best
-              service for your event.
-            </p>
-          </div>
         </div>
 
-        {/* Basic Packages */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 pt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {packages.map((pkg, index) => (
-            <div
-              key={pkg.name}
-              className={`bg-darkGray border border-metallicGold rounded-xl p-8 relative transition-all duration-300 ${
-                pkg.popular ? "ring-2 ring-metallicGold scale-105 shadow-gold" : "hover:shadow-gold hover:scale-105"
+            <div 
+              key={index}
+              className={`relative bg-ivory rounded-2xl p-8 border-2 shadow-gold hover:shadow-gold-glow transition-all duration-300 hover:scale-105 ${
+                pkg.popular ? 'border-gold' : 'border-gold/30'
               }`}
             >
               {pkg.popular && (
-                <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 z-10">
-                  <div className="bg-metallicGold text-black px-6 py-2 rounded-full text-sm font-bold shadow-gold whitespace-nowrap uppercase tracking-wider">
-                    ✨ Most Popular
-                  </div>
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <span className="bg-gold text-white px-4 py-2 rounded-full text-sm font-semibold">
+                    Most Popular
+                  </span>
                 </div>
               )}
 
               <div className="text-center mb-8">
-                <h3 className="font-playfair text-2xl font-semibold text-white mb-2 uppercase tracking-wider">{pkg.name}</h3>
-                <p className="text-gray-300 mb-4">{pkg.description}</p>
-                <div className="text-4xl font-bold text-metallicGold mb-1">
-                  <span className="text-metallicGold">$</span>
-                  <span className="text-metallicGold">{pkg.price}</span>
+                <h3 className="text-2xl font-bold text-darkWarmGray mb-4">{pkg.name}</h3>
+                <div className="text-4xl font-bold text-gold mb-2">
+                  ${pkg.price}
+                  <span className="text-lg text-warmGray font-normal">/event</span>
                 </div>
-                <div className="text-gray-300">{pkg.duration}</div>
+                <p className="text-warmGray">{pkg.description}</p>
               </div>
 
               <ul className="space-y-3 mb-8">
-                {pkg.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start space-x-3">
-                    <Check className="h-5 w-5 text-metallicGold mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-300 text-sm">{feature}</span>
+                {pkg.features.map((feature, featureIndex) => (
+                  <li key={featureIndex} className="flex items-center space-x-3">
+                    <div className="w-5 h-5 bg-gold rounded-full flex items-center justify-center flex-shrink-0">
+                      <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <span className="text-warmGray">{feature}</span>
                   </li>
                 ))}
               </ul>
 
-              <div className="text-center">
-                <span className="inline-block px-6 py-3 bg-metallicGold border-2 border-metallicGold rounded-full text-sm text-black font-bold hover:bg-darkGold transition-all duration-300 uppercase tracking-wider">
-                  Contact us for availability
-                </span>
-              </div>
+              <button className="w-full bg-gold hover:bg-goldDark text-white py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                Choose Package
+              </button>
             </div>
           ))}
         </div>
 
-        {/* Custom Packages */}
-        <div className="bg-darkGray border border-metallicGold rounded-xl p-8 mb-16 shadow-gold">
-          <h3 className="font-playfair text-2xl font-semibold text-white mb-6 text-center uppercase tracking-wider">Custom Full Packages</h3>
-          <p className="text-center text-gray-300 mb-8">
-            We offer full packages which include everything in our Basic, Standard, or Premium package.
-          </p>
-
-          <div className="mt-8">
-            <h4 className="font-playfair text-xl font-semibold text-white mb-6 text-center uppercase tracking-wider">
-              Custom Package Can Include:
-            </h4>
-            <ul className="space-y-3 mb-8 max-w-2xl mx-auto">
-              {plusFeatures.map((feature, idx) => (
-                <li key={idx} className="flex items-start space-x-3">
-                  <Check className="h-5 w-5 text-metallicGold mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-300 text-sm">{feature}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="text-center">
-              <p className="text-gray-300 mb-4">
-                <span className="font-semibold">Contact us for custom pricing</span> based on your specific needs and
-                guest count.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Add-ons */}
-        <div className="bg-darkGray border border-metallicGold rounded-xl p-8 mb-16 shadow-gold">
-          <h3 className="font-playfair text-2xl font-semibold text-white mb-6 text-center uppercase tracking-wider">Additional Add-ons</h3>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {/* Add-ons Section */}
+        <div className="mt-20 text-center">
+          <h3 className="text-3xl font-bold text-darkWarmGray mb-8">Additional Services</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {addOns.map((addon, index) => (
-              <div
-                key={index}
-                className="flex items-center space-x-3 p-2 rounded-lg hover:bg-lightGray transition-colors"
-              >
-                <span className="w-3 h-3 bg-metallicGold rounded-full"></span>
-                <span className="text-gray-300">{addon}</span>
+              <div key={index} className="bg-ivory rounded-xl p-6 border border-gold/20 hover:bg-champagne/50 transition-colors duration-300">
+                <div className="w-12 h-12 bg-gold/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <addon.icon className="w-6 h-6 text-gold" />
+                </div>
+                <h4 className="font-semibold text-darkWarmGray mb-2">{addon.name}</h4>
+                <p className="text-warmGray text-sm mb-3">{addon.description}</p>
+                <div className="text-gold font-bold">${addon.price}</div>
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Special Offer */}
-        <div className="mt-12 bg-darkGray border border-metallicGold p-8 rounded-xl shadow-gold">
-          <h3 className="font-playfair text-xl font-semibold text-white mb-3 text-center uppercase tracking-wider">✨ Special Offer</h3>
-          <p className="text-center text-gray-300">
-            Book a full package for 2025 in January or February and receive a stunning basic backdrop for FREE!
-            <br />
-            <span className="text-metallicGold font-bold">Must pay deposit.</span>
-          </p>
-          <p className="text-xs text-center mt-4 text-gray-400">
-            (Disclaimer: Backdrops and DJ services can be customized for an additional fee)
-          </p>
         </div>
       </div>
     </section>

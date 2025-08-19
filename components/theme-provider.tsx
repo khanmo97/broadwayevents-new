@@ -10,25 +10,25 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 // Single Black & Gold Premium theme
 const themeColors = {
-  primary: "#000000", // Matte black (main brand color)
-  primaryDark: "#0A0A0A", // Darker black
-  accent: "#1A1A1A", // Dark gray
-  background: "#000000", // Pure black
-  text: "#FFFFFF", // Pure white text
-  gold: "#FFD700", // Metallic gold
-  goldLight: "#FFED4A", // Light gold
-  goldDark: "#B8860B", // Dark gold
-  surface: "#111111", // Dark surface
-  border: "#FFD700", // Gold borders
-  highlight: "#FFD700", // Gold highlights
-  // Premium theme colors
-  black: "#000000",
-  darkGray: "#1A1A1A",
-  lightGray: "#333333",
-  white: "#FFFFFF",
-  metallicGold: "#FFD700",
-  darkGold: "#B8860B",
-  neonGold: "#FFED4A"
+  primary: "#4B4B4B", // Dark warm gray (headings)
+  primaryDark: "#3A3A3A", // Darker warm gray
+  accent: "#B8860B", // Gold
+  background: "#FAF9F6", // Ivory
+  text: "#6B6B6B", // Warm taupe gray (body text)
+  surface: "#F5EDE4", // Very light champagne beige
+  border: "#B8860B", // Gold borders
+  highlight: "#B8860B", // Gold highlights
+  // Olive and Gold theme colors
+  ivory: "#FAF9F6",
+  champagne: "#F5EDE4",
+  olive: "#556B2F", // Dark olive
+  lightOlive: "#6B8E23", // Medium olive
+  darkOlive: "#2F4F2F", // Dark forest green
+  gold: "#B8860B", // Gold
+  goldLight: "#DAA520", // Light gold
+  goldDark: "#8B6914", // Dark gold
+  warmGray: "#6B6B6B",
+  darkWarmGray: "#4B4B4B"
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {

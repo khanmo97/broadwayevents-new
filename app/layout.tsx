@@ -42,9 +42,9 @@ export default function RootLayout({
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <body className="font-inter antialiased">
         <ThemeProvider>
-          <Navbar />
-          {children}
-          <Footer />
+        <Navbar />
+        {children}
+        <Footer />
         </ThemeProvider>
       </body>
     </html>
